@@ -87,7 +87,7 @@ async def incoming_call_handler(request: Request):
             incoming_call_context = event.data["incomingCallContext"]
             guid = uuid.uuid4()
 
-            query_parameters = urlencode({"callerId": caller_id, "boo": "poop"})
+            query_parameters = urlencode({"callerId": caller_id})
             callback_uri = f"{CALLBACK_EVENTS_URI}/{guid}?{query_parameters}"
 
             parsed_url = urlparse(CALLBACK_EVENTS_URI)
